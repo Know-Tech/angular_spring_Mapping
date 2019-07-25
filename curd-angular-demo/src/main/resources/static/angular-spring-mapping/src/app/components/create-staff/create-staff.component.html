@@ -1,0 +1,21 @@
+<h3>Create Staff</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="Sname">Staff Name</label>
+      <input type="text" class="form-control" id="sname" required [(ngModel)]="staffs.sname" name="sname">
+    </div>
+ 
+    <div class="form-group">
+      <label for="skill">Skill</label>
+      <input type="text" class="form-control" id="skill" required [(ngModel)]="staffs.skill" name="skill">
+    </div>
+ 
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newStaff()">Add</button>
+</div>

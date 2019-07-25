@@ -1,0 +1,9 @@
+<h1>Staffs</h1>
+ 
+<div *ngFor="let staff of staffs | async" style="width: 300px;">
+  <staffform [staff]='staff'></staffform>
+</div>
+ 
+<div>
+  <button type="button" class="button btn-danger" (click)='deleteStaffs()'>Delete All</button>
+</div>
