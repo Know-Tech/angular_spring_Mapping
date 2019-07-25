@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import {StaffService} from '../../shared_staff/staff.service';
-import {Staff} from '../../staff';
+import {StaffService} from '../shared_staff/staff.service';
+import {Staff} from '../staff';
 
 @Component({
   selector: 'app-stafflist',
@@ -19,7 +19,7 @@ export class StafflistComponent implements OnInit {
     this.reloadData();
   }
 
-  deleteStaffs() {
+  deleteStaff() {
     this.staffService.deleteAll()
       .subscribe(
         data => {

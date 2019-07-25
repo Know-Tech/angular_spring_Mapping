@@ -2,14 +2,18 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
+import {Staff} from '../staff';
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
 
-  private baseUrl:string="http://localhost:8080/api/staffs";
+  private baseUrl:string=this.newMethod();
   constructor(private http: HttpClient) { }
+
+  private newMethod(): string {
+    return "http://localhost:8080/api/staffs";
+  }
 
   getStaff(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);

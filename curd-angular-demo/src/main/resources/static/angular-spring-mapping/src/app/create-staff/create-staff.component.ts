@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {StaffService} from '../../shared_staff/staff.service';
-import {Staff} from '../../staff';
+import {StaffService} from '../shared_staff/staff.service';
+import {Staff} from '../staff';
 
 
 @Component({
@@ -11,7 +11,15 @@ import {Staff} from '../../staff';
 })
 export class CreateStaffComponent implements OnInit {
 
-  staffs: Staff = new Staff();
+  private _staffs: Staff = new Staff();
+
+  public get staffs(): Staff {
+    return this._staffs;
+  }
+  public set staffs(value: Staff) {
+    this._staffs = value;
+  }
+  
   submitted = false;
 
   constructor(private staffService: StaffService) { }

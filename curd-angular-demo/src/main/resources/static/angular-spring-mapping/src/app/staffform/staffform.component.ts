@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {StaffService} from '../../shared_staff/staff.service';
-import {Staff} from '../../staff';
+import {StaffService} from '../shared_staff/staff.service';
+import {Staff} from '../staff';
 import { StafflistComponent } from '../stafflist/stafflist.component';
 
 
@@ -20,7 +20,7 @@ export class StaffformComponent implements OnInit {
 
   updateActive(isActive: boolean) {
     this.staffService.updateStaff(this.staffs.id,
-      { name: this.staffs.sname, skill: this.staffs.skill, active: isActive })
+      { sname: this.staffs.sname, skill: this.staffs.skill, active: isActive })
       .subscribe(
         data => {
           console.log(data);
